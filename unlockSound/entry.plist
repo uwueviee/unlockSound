@@ -1,0 +1,9 @@
+{
+    entry = {
+	bundle = unlockSound;
+	cell = PSLinkCell;
+	detail = unlockSoundListController;
+	isController = 1;
+	label = unlockSound;
+    };
+}
