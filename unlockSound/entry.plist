@@ -1,9 +1,11 @@
 {
-    entry = {
-	bundle = unlockSound;
-	cell = PSLinkCell;
-	detail = unlockSoundListController;
-	isController = 1;
-	label = unlockSound;
-    };
+	entry = {
+		bundle = unlockSound;
+		cell = PSLinkCell;
+		detail = "unlockSoundListController";
+		isController = 1;
+		label = unlockSound;
+		hasIcon = YES;
+		icon = "icon.png";
+	};
 }
