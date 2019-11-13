@@ -1,6 +1,6 @@
 Package: gq.skye.unlocksound
 Name: unlockSound
-Depends: mobilesubstrate
+Depends: mobilesubstrate, ws.hbang.common
 Version: 0.0.1
 Architecture: iphoneos-arm
 Description: Bring back the classical iOS 6 unlock sound.

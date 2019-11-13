@@ -5,6 +5,14 @@
 	<key>items</key>
 	<array>
 		<dict>
+			<key>cellClass</key>
+			<string>HBImageTableCell</string>
+			<key>icon</key>
+			<string>banner.png</string>
+			<key>height</key>
+			<integer>230</integer>
+		</dict>
+		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
@@ -20,7 +28,7 @@
 			<key>key</key>
 			<string>enabled</string>
 			<key>label</key>
-			<string>Enable</string>
+			<string>Enabled</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -29,10 +37,40 @@
 			<string>Credits</string>
 		</dict>
 		<dict>
-			<key>cell</key>
-			<string>PSStaticTextCell</string>
+			<key>big</key>
+			<true/>
+			<key>cellClass</key>
+			<string>HBTwitterCell</string>
 			<key>label</key>
-			<string>@PretzelCA - Main Developer</string>
+			<string>PretzelCA - Main Developer</string>
+			<key>user</key>
+			<string>pretzelca</string>
+			<key>height</key>
+			<integer>56</integer>
+		</dict>
+		<dict>
+			<key>big</key>
+			<true/>
+			<key>cellClass</key>
+			<string>HBTwitterCell</string>
+			<key>label</key>
+			<string>Hainaan__ - Moral Support</string>
+			<key>user</key>
+			<string>hainaan</string>
+			<key>height</key>
+			<integer>56</integer>
+		</dict>
+		<dict>
+			<key>big</key>
+			<true/>
+			<key>cellClass</key>
+			<string>HBTwitterCell</string>
+			<key>label</key>
+			<string>Am1n13 - Yes</string>
+			<key>user</key>
+			<string>am1n13</string>
+			<key>height</key>
+			<integer>56</integer>
 		</dict>
 		<dict>
 			<key>cell</key>

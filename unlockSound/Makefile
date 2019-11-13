@@ -4,6 +4,7 @@ BUNDLE_NAME = unlockSound
 unlockSound_FILES = unlockSound.mm
 unlockSound_INSTALL_PATH = /Library/PreferenceBundles
 unlockSound_PRIVATE_FRAMEWORKS = Preferences
+unlockSound_EXTRA_FRAMEWORKS = Cephei CepheiPrefs
 
 include $(THEOS_MAKE_PATH)/bundle.mk
 

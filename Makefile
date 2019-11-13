@@ -3,6 +3,7 @@ include $(THEOS)/makefiles/common.mk
 TWEAK_NAME = unlockSound
 unlockSound_FILES = Tweak.xm
 unlocksound_FRAMEWORKS = UIKit
+unlockSound_EXTRA_FRAMEWORKS = Cephei CepheiPrefs
 
 BUNDLE_NAME = gq.skye.unlocksound
 gq.skye.unlocksound_INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries
