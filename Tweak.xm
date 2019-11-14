@@ -7,36 +7,31 @@
 @interface SBLockScreenViewControllerBase : UIViewController
 @end
 
-%group normal
-	%hook SBLockScreenViewControllerBase
-	    - (void)prepareForUIUnlock {
-	        %orig;
+    %hook SBLockScreenViewControllerBase
+        - (void)prepareForUIUnlock {
+            %orig;
+            
+            NSLog(@"[unlockSound] Preparing for UI unlock");
 
-			NSMutableDictionary *prefs = [[NSMutableDictionary alloc] initWithContentsOfFile:kSettingsPath];
+            NSMutableDictionary *prefs = [[NSMutableDictionary alloc] initWithContentsOfFile:kSettingsPath];
 
-	        BOOL isEnabled = [[prefs objectForKey:@"enabled"] boolValue];
+            BOOL isEnabled = [[prefs objectForKey:@"enabled"] boolValue];
 
-	        if (isEnabled) {
-		        NSBundle *bundle = [[[NSBundle alloc] initWithPath:kBundlePath] autorelease];
+            if (isEnabled) {
+                NSLog(@"[unlockSound] unlockSound is enabled, playing sound");
+                
+                NSBundle *bundle = [[[NSBundle alloc] initWithPath:kBundlePath] autorelease];
 
-		        NSString *soundFilePath = [bundle pathForResource:@"unlockSound" ofType:@"m4a"];
-		        NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+                NSString *soundFilePath = [bundle pathForResource:@"unlockSound" ofType:@"m4a"];
+                NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
 
-		        AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
+                AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
 
-		        player.numberOfLoops = 0;
+                player.numberOfLoops = 0;
 
-		        [player play];
-	        }
+                [player play];
+            }
 
-	        [prefs release];
-	    }
-	%end
-%end
-
-%ctor {
-	float version = [[[UIDevice currentDevice] systemVersion] floatValue];
-	if (version >= 10) {
-		%init(normal);
-	}
-}
+            [prefs release];
+        }
+    %end

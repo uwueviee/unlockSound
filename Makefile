@@ -2,7 +2,7 @@ include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = unlockSound
 unlockSound_FILES = Tweak.xm
-unlocksound_FRAMEWORKS = UIKit
+unlocksound_FRAMEWORKS = UIKit SpringBoard
 unlockSound_EXTRA_FRAMEWORKS = Cephei CepheiPrefs
 
 BUNDLE_NAME = gq.skye.unlocksound
