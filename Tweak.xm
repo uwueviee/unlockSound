@@ -9,16 +9,14 @@
 
     %hook SBLockScreenViewControllerBase
         - (void)prepareForUIUnlock {
-            %orig;
-            
-            NSLog(@"[unlockSound] Preparing for UI unlock");
+            HBLogDebug(@"Preparing for UI unlock");
 
             NSMutableDictionary *prefs = [[NSMutableDictionary alloc] initWithContentsOfFile:kSettingsPath];
 
             BOOL isEnabled = [[prefs objectForKey:@"enabled"] boolValue];
 
             if (isEnabled) {
-                NSLog(@"[unlockSound] unlockSound is enabled, playing sound");
+                HBLogDebug(@"unlockSound is enabled, playing sound");
                 
                 NSBundle *bundle = [[[NSBundle alloc] initWithPath:kBundlePath] autorelease];
 
@@ -31,7 +29,9 @@
 
                 [player play];
             }
-
+            
             [prefs release];
+            
+            %orig;
         }
     %end
